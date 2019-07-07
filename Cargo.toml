@@ -1,0 +1,15 @@
+[package]
+name = "derive_destructure"
+version = "1.0.0"
+authors = ["Michiel De Muynck <michieldemuynck@gmail.com>"]
+edition = "2018"
+
+[lib]
+name = "derive_destructure"
+path = "src/lib.rs"
+proc-macro = true
+
+[dependencies]
+proc-macro2 = "0.4.30"
+syn = "0.15.39"
+quote = "0.6.12"
