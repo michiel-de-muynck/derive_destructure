@@ -4,7 +4,7 @@ extern crate derive_destructure;
 use std::rc::Rc;
 use std::cell::Cell;
 
-#[derive(destructure)]
+#[derive(destructure, remove_trait_impls)]
 struct DropChecker(Rc<Cell<bool>>);
 
 impl DropChecker {
@@ -39,5 +39,15 @@ fn test_droptest_destructure() {
 	assert_eq!(dropped_rc_clone.get(), false);
 	let (dropped_rc,) = drop_checker.destructure();
 	assert_eq!(dropped_rc.get(), false);
+	assert_eq!(dropped_rc_clone.get(), false);
+}
+
+#[test]
+fn test_droptest_remove_trait_impls() {
+	let drop_checker = DropChecker::new();
+	let dropped_rc_clone = Rc::clone(&drop_checker.0);
+	assert_eq!(dropped_rc_clone.get(), false);
+	let custom_drop_removed = drop_checker.remove_trait_impls();
+	assert_eq!(custom_drop_removed.0.get(), false);
 	assert_eq!(dropped_rc_clone.get(), false);
 }
