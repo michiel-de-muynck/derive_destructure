@@ -1,4 +1,5 @@
 [![Crates.io](https://img.shields.io/crates/v/derive_destructure.svg)](https://crates.io/crates/derive_destructure)
+{{badges}}
 
 # {{crate}}
 

@@ -9,6 +9,9 @@ repository = "https://github.com/Migi/derive_destructure"
 keywords = ["derive", "destructure", "drop", "E0509", "remove_trait_impls"]
 readme = "README.md"
 
+[badges]
+travis-ci = { repository = "Migi/derive_destructure" }
+
 [lib]
 name = "derive_destructure"
 path = "src/lib.rs"
