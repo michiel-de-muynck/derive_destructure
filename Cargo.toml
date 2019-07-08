@@ -3,6 +3,11 @@ name = "derive_destructure"
 version = "1.0.0"
 authors = ["Michiel De Muynck <michieldemuynck@gmail.com>"]
 edition = "2018"
+license = "MIT"
+description = "Destructure structs that implement Drop"
+repository = "https://github.com/Migi/derive_destructure"
+keywords = ["derive", "destructure", "drop", "E0509", "remove_trait_impls"]
+readme = "README.md"
 
 [lib]
 name = "derive_destructure"

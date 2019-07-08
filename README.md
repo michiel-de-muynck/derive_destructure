@@ -81,3 +81,5 @@ fn main() {
     println!("{}", x.some_int);
 }
 ```
+
+License: MIT
