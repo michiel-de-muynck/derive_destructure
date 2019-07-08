@@ -198,6 +198,7 @@ pub fn derive_remove_trait_impls(input: proc_macro::TokenStream) -> proc_macro::
                         }
                     });
                     quote! {
+                        #[must_use]
                         struct #new_type_name #ty_generics #where_clause {
                             #(#fields_iter,)*
                         }
@@ -230,6 +231,7 @@ pub fn derive_remove_trait_impls(input: proc_macro::TokenStream) -> proc_macro::
                         }
                     });
                     quote! {
+                        #[must_use]
                         struct #new_type_name #ty_generics #where_clause (#(#fields_iter,)*);
 
                         impl #impl_generics #name #ty_generics #where_clause {
@@ -246,6 +248,7 @@ pub fn derive_remove_trait_impls(input: proc_macro::TokenStream) -> proc_macro::
                 }
                 Fields::Unit => {
                     quote! {
+                        #[must_use]
                         struct #new_type_name #ty_generics #where_clause;
 
                         impl #impl_generics #name #ty_generics #where_clause {
